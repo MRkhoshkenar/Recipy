@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="src/sass/main.scss" />
+    <script type="module" defer src="src/js/controller.js"></script>
+
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <title>Delicious Recipes</title>
+  </head>
+  <body class="container">
+    <section class="app">
+      <header class="header">
+        <section class="header__logo-box">
+          <i class="ph-cooking-pot header__logo-box__icon"></i>
+          <span class="header__logo-box__text">Recipy</span>
+        </section>
+        <form class="header__search-box">
+          <input
+            type="text"
+            class="header__search-box__field"
+            placeholder="Search more than 1,000,000 recipes..."
+          />
+          <button class="btn btn--search">
+            <svg class="btn--search__icon">
+              <use href="src/img/icons.svg#icon-search"></use>
+            </svg>
+
+            <span class="search">Search</span>
+          </button>
+        </form>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <button class="btn--nav btn--nav--add-recipe">
+                <svg class="btn--nav__icon">
+                  <use href="src/img/icons.svg#icon-edit"></use>
+                </svg>
+                <span>Add recipe</span>
+              </button>
+            </li>
+            <li class="nav__item">
+              <button class="btn--nav btn--nav--bookmarks">
+                <svg class="btn--nav__icon">
+                  <use href="src/img/icons.svg#icon-bookmark"></use>
+                </svg>
+                <span>Bookmarks</span>
+              </button>
+              <div class="nav__bookmarks">
+                <ul class="nav__bookmarks__list">
+                  <div class="nav__bookmarks__message">
+                    <svg class="nav__bookmarks__icon">
+                      <use href="src/img/icons.svg#icon-smile"></use>
+                    </svg>
+                    <p>
+                      No bookmarks yet. Find a nice recipe and bookmark it :)
+                    </p>
+                  </div>
+
+                  <!-- <li class="preview">
+                    <a href="#" class="preview__link">
+                      <figure class="preview__fig">
+                        <img src="" alt="Test" />
+                      </figure>
+                      <div class="preview__data">
+                        <h4 class="preview__name">
+                          Pizza with Tomato Cream ...
+                        </h4>
+                        <p class="preview__author">The Pioneer Woman</p>
+                      </div>
+                    </a>
+                  </li> -->
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <section class="result">
+        <ul class="result__list">
+          <!-- <li class="preview">
+            <a href="#" class="preview__link preview__link--active">
+              <figure class="preview__fig">
+                <img src="" alt="Test" />
+              </figure>
+              <div class="preview__data">
+                <h4 class="preview__name">Pizza with Tomato Cream ...</h4>
+                <p class="preview__author">The Pioneer Woman</p>
+              </div>
+              <div class="preview__user-generated">
+                <svg>
+                  <use href="src/img/icons.svg#icon-user"></use>
+                </svg>
+              </div>
+            </a>
+          </li> -->
+        </ul>
+        <div class="result__pagination">
+          <!-- <button class="btn--pagination btn--pagination--pre">
+            <i class="ph-arrow-left"></i>
+            <span>Page 1</span>
+          </button>
+          <button class="btn--pagination btn--pagination--next">
+            <span>Page 3</span>
+            <i class="ph-arrow-right"></i>
+          </button> -->
+        </div>
+      </section>
+      <section class="recipe">
+        <div class="recipe__message ">
+          <svg class="recipe__message__icon">
+            <use href="src/img/icons.svg#icon-smile"></use>
+          </svg>
+          <p>Start by searching for a recipe or an ingredient. Have fun!</p>
+        </div>
+
+        <!-- <div class="spinner">
+          <svg>
+            <use href="src/img/icons.svg#icon-loader"></use>
+          </svg>
+        </div> -->
+
+        <!-- <div class="error">
+          <svg class="error__icon">
+            <use href="src/img/icons.svg#icon-alert-triangle"></use>
+          </svg>
+          <p>No recipes found for your query! Please try again ;)</p>
+        </div> -->
+
+        <!-- <figure class="recipe__fig">
+          <img src="src/img/1.jpg" alt="Tomato" class="recipe__img" />
+          <h1 class="recipe__title">
+            <span> Pasta with tomato cream sauce</span>
+          </h1>
+        </figure>
+
+        <div class="recipe__details">
+          <div class="recipe__info">
+            <svg class="recipe__info-icon">
+              <use href="src/img/icons.svg#icon-clock"></use>
+            </svg>
+            <span class="recipe__info-data recipe__info-data--minutes">60</span>
+            <span class="recipe__info-text">minutes</span>
+          </div>
+
+          <div class="recipe__info">
+            <svg class="recipe__info-icon">
+              <use href="src/img/icons.svg#icon-users"></use>
+            </svg>
+            <span class="recipe__info-data recipe__info-data--serving">4</span>
+            <span class="recipe__info-text">serving</span>
+
+            <div class="recipe__info-buttons">
+              <button
+                class="recipe__info-buttons__btn recipe__info-buttons__btn--increase"
+              >
+                <svg class="recipe__info-icon">
+                  <use href="src/img/icons.svg#icon-minus-circle"></use>
+                </svg>
+              </button>
+              <button
+                class="recipe__info-buttons__btn recipe__info-buttons__btn--decrease"
+              >
+                <svg class="recipe__info-icon">
+                  <use href="src/img/icons.svg#icon-plus-circle"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="recipe__user-generated">
+            <svg class="recipe__info-icon">
+              <use href="src/img/icons.svg#icon-user"></use>
+            </svg>
+          </div>
+          <button class="recipe__info-buttons__btn--bookmark">
+            <svg class="recipe__info-icon recipe__info-icon--bookmark">
+              <use href="src/img/icons.svg#icon-bookmark-fill"></use>
+            </svg>
+          </button>
+        </div>
+
+        <div class="recipe__ingredients">
+          <h2 class="heading--2">Recipe Ingredients</h2>
+          <ul class="recipe__ingredient__list">
+            <li class="recipe__ingredient">
+              <svg class="recipe__info-icon">
+                <use href="src/img/icons.svg#icon-check"></use>
+              </svg>
+              <div class="recipe__quantity">1000</div>
+              <div class="recipe__description">
+                <span class="recipe__unit">g</span>
+                pasta
+              </div>
+            </li>
+
+            <li class="recipe__ingredient">
+              <svg class="recipe__info-icon">
+                <use href="src/img/icons.svg#icon-check"></use>
+              </svg>
+              <div class="recipe__quantity">0.5</div>
+              <div class="recipe__description">
+                <span class="recipe__unit">cup</span>
+                ricotta cheese
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="recipe__how-to-cook">
+          <h2 class="heading--2">how to cook it</h2>
+          <p>
+            This recipe was carefully designed and tested by
+            <span> Closet Cooking</span>. Please check out directions at their
+            website.
+          </p>
+
+          <button class="recipe__how-to-cook__btn">direction &rarr;</button> -->
+        </div>
+      </section>
+    </section>
+    <section class="overlay hidden"></section>
+    <section class="add-recipe-window hidden">
+      <button class="btn--close-modal">&times;</button>
+      <form class="upload">
+        <div class="upload__col">
+          <h3 class="upload__heading upload__heading">recipe Data</h3>
+          <label>Title</label>
+          <input value="TEST23" required name="title" type="text" />
+          <label>URL</label>
+          <input value="TEST23" required name="sourceUrl" type="text" />
+          <label>Image URL</label>
+          <input value="TEST23" required name="image" type="text" />
+          <label>Publisher</label>
+          <input value="TEST23" required name="publisher" type="text" />
+          <label>Prep time</label>
+          <input value="23" required name="cookingTime" type="number" />
+          <label>Servings</label>
+          <input value="23" required name="servings" type="number" />
+        </div>
+        <div class="upload__col">
+          <h3 class="upload__heading upload__heading">ingredients</h3>
+
+          <label for="ingredient-1">Ingredient 1</label>
+          <input
+            value="0.75,kg,Rice"
+            type="text"
+            required
+            name="ingredient-1"
+            placeholder="Format: 'Quantity,Unit,Description'"
+          />
+          <label for="ingredient-2">Ingredient 2</label>
+          <input
+            value="1,,onion"
+            type="text"
+            required
+            name="ingredient-2"
+            placeholder="Format: 'Quantity,Unit,Description'"
+          />
+          <label for="ingredient-3">Ingredient 3</label>
+          <input
+            value=",,salt"
+            type="text"
+            required
+            name="ingredient-3"
+            placeholder="Format: 'Quantity,Unit,Description'"
+          />
+          <label for="ingredient-4">Ingredient 4</label>
+          <input
+            value=""
+            type="text"
+            name="ingredient-4"
+            placeholder="Format: 'Quantity,Unit,Description'"
+          />
+          <label for="ingredient-5">Ingredient 5</label>
+          <input
+            value=""
+            type="text"
+            name="ingredient-5"
+            placeholder="Format: 'Quantity,Unit,Description'"
+          />
+          <label for="ingredient-6">Ingredient 6</label>
+          <input
+            value=""
+            type="text"
+            name="ingredient-6"
+            placeholder="Format: 'Quantity,Unit,Description'"
+          />
+        </div>
+        <button class="upload__btn">
+          <svg>
+            <use href="src/img/icons.svg#icon-upload-cloud"></use>
+          </svg>
+          <span> Upload</span>
+        </button>
+      </form>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+.container {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(20rem, 1fr) [center-start
+    result-start] 1fr [result-end]
+    5fr [center-end] minmax(20rem, 1fr) [full-end];
+  padding: 7rem 0;
+  @media only screen and (max-width: 87.5em) {
+    padding: 0;
+  } //1400px
+}
+
+.app {
+  grid-column: center-start/center-end;
+
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  grid-template-rows: max-content 1fr;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2rem 6rem 0.5rem rgba($color-grey-dark-1, 0.4);
+  min-height: 120rem;
+  @media only screen and (max-width: 87.5em) {
+    grid-column: full-start/full-end;
+    border-radius: 0;
+  } //1400px
+}
+
+.header {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+}
+
+.result {
+  grid-column: 1/2;
+  grid-row: 2/-1;
+  background-color: #fff;
+}
+
+.recipe {
+  grid-column: 2/-1;
+  grid-row: 2/-1;
+
+  display: grid;
+  grid-template-columns:
+    [full-start] 10rem [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    )
+    [center-end] 10rem [full-start];
+  grid-template-rows: 40vh repeat(3, max-content);
+}

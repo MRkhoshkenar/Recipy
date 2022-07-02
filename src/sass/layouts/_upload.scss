@@ -1,0 +1,118 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  backdrop-filter: blur(10px);
+
+  transition: all 0.5s;
+}
+
+.add-recipe-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 60rem;
+  width: 110rem;
+  z-index: 200;
+  background-color: $color-grey-light-1;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 1fr max-content;
+}
+
+.upload {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem 5rem;
+  padding: 5rem 4rem 4rem;
+
+  &__heading {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: $color-primary;
+    grid-column: 1/-1;
+  }
+  &__col {
+    display: grid;
+    grid-template-columns: 1.5fr 4fr;
+    row-gap: 2rem;
+    column-gap: 4rem;
+    align-items: center;
+    label {
+      grid-column: 1/2;
+      font-size: 1.6rem;
+    }
+    input {
+      grid-column: 2/-1;
+      border: none;
+      padding: 1.4rem 1rem;
+      border-radius: 0.2rem;
+
+      font-size: 1.4rem;
+      color: $color-grey-dark-1;
+
+      &:focus {
+        outline: solid 2px $color-primary;
+      }
+      &::placeholder {
+        color: $color-grey-light-3;
+      }
+    }
+  }
+
+  &__btn {
+    grid-column: 1/-1;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    font-size: 2rem;
+    display: flex;
+    gap: 1rem;
+    color: $color-grey-light-2;
+
+    padding: 0 3rem;
+    border-radius: 10rem;
+    border: none;
+    background-image: $gradient;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      padding: 0 4rem;
+    }
+
+    svg {
+      height: 2rem;
+      width: 2rem;
+      fill: #fff;
+    }
+  }
+}
+
+.btn {
+  &--close-modal {
+    background-color: transparent;
+    border: none;
+    font-size: 2.6rem;
+    display: grid;
+    justify-content: end;
+    align-items: start;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1.6rem;
+    color: $color-grey-dark-1;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

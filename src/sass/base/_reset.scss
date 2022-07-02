@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+
+  @media only screen and (max-width: 87.5em) {
+    font-size: 56.25%;
+  }
+
+  @media only screen and (max-width: 72.5em) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: 58.75em) {
+    font-size: 47%;
+  }
+  @media only screen and (max-width: 50em) {
+    font-size: 43.75%;
+  }
+}
+
+.container {
+  position: relative;
+  background-image: $gradient;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.hidden {
+  display: none !important;
+}

@@ -1,0 +1,42 @@
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__list {
+    padding: 2rem 0;
+  }
+
+  .message {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5rem;
+    font-size: 1.8rem;
+    color: $color-grey-dark-1;
+
+    &__icon {
+      height: 5rem;
+      width: 5rem;
+      fill: $color-primary;
+      transform: translateY(-1.5rem);
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+  }
+}
+
+.btn {
+  &--pagination {
+    &--pre {
+      margin-right: auto;
+    }
+    &--next {
+      margin-left: auto;
+    }
+  }
+}
